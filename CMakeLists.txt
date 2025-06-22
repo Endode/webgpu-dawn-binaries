@@ -36,13 +36,19 @@ set(BUILD_SHARED_LIBS OFF)
 # Disable unneeded parts
 set(DAWN_BUILD_SAMPLES OFF)
 set(DAWN_USE_GLFW OFF)
-set(DAWN_ENABLE_OPENGL ON)
 set(DAWN_BUILD_PROTOBUF OFF)
 set(DAWN_FETCH_DEPENDENCIES ON)
 set(TINT_BUILD_CMD_TOOLS OFF)
 set(TINT_BUILD_SAMPLES OFF)
 set(TINT_BUILD_DOCS OFF)
 set(TINT_BUILD_TESTS OFF)
+
+set(DAWN_ENABLE_DESKTOP_GL ON)
+if(UNIX)
+  set(DAWN_USE_WAYLAND ON)
+  set(DAWN_USE_X11 ON)
+endif()
+
 # add dawn source directory to build system
 FetchContent_MakeAvailable(dawn)
 # This is all of necessary dawn libraries bundled up.
