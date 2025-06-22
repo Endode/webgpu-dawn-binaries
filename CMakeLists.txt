@@ -43,7 +43,8 @@ set(TINT_BUILD_SAMPLES OFF)
 set(TINT_BUILD_DOCS OFF)
 set(TINT_BUILD_TESTS OFF)
 
-set(DAWN_ENABLE_DESKTOP_GL ON)
+# NOTE: OpenGL just isn't working in Dawn for me, so I'm just gonna disable it for now
+# set(DAWN_ENABLE_DESKTOP_GL ON)
 if(UNIX)
   set(DAWN_USE_WAYLAND ON)
   set(DAWN_USE_X11 ON)
